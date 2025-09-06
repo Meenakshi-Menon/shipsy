@@ -1,0 +1,20 @@
+COMPANY REVENUE ANALYSIS SUMMARY
+==================================================
+
+Total Companies Processed: 5
+Companies with Revenue Data: 2
+Success Rate: 40.0%
+
+TIER DISTRIBUTION:
+--------------------
+Diamond: 1 companies (20.0%)
+Super Platinum: 1 companies (20.0%)
+Unknown: 3 companies (60.0%)
+
+TIER DEFINITIONS:
+--------------------
+Super Platinum: Annual revenue from operations > $1Bn
+Platinum: Annual revenue from operations $500Mn to $1Bn
+Diamond: Annual revenue from operations $100Mn to $500Mn
+Gold: Annual revenue from operations below $100Mn
+Unknown/Error: Revenue information not available

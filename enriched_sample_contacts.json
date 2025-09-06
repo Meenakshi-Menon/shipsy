@@ -1,0 +1,42 @@
+[
+  {
+    "contact_name": "John Smith",
+    "company_name": "Microsoft",
+    "linkedin_url": "https://www.linkedin.com/in/john-smith-82561510/",
+    "current_job_title": "HR Director",
+    "work_email": "john.smith@en.wikipedia.org",
+    "citation_source": "LinkedIn Profile"
+  },
+  {
+    "contact_name": "Sarah Johnson",
+    "company_name": "Google",
+    "linkedin_url": "https://www.linkedin.com/in/sarah-johnson-039b4b10/",
+    "current_job_title": "Manager",
+    "work_email": "sarah.johnson@about.google",
+    "citation_source": "LinkedIn Profile"
+  },
+  {
+    "contact_name": "Michael Brown",
+    "company_name": "Apple",
+    "linkedin_url": "https://www.linkedin.com/in/michaelbrownfib618/",
+    "current_job_title": "Americas Geo Development Lead",
+    "work_email": "michael.brown@apple.com",
+    "citation_source": "LinkedIn Profile"
+  },
+  {
+    "contact_name": "Emily Davis",
+    "company_name": "Amazon",
+    "linkedin_url": "NOT_FOUND",
+    "current_job_title": "NOT_FOUND",
+    "work_email": "emily.davis@amazon.com",
+    "citation_source": "Web Search"
+  },
+  {
+    "contact_name": "David Wilson",
+    "company_name": "Meta",
+    "linkedin_url": "https://uk.linkedin.com/in/david-wilson-5498039",
+    "current_job_title": "Business Marketing Director, EMEA",
+    "work_email": "david.wilson@meta.com",
+    "citation_source": "LinkedIn Profile"
+  }
+]

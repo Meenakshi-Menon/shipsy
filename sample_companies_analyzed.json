@@ -1,0 +1,47 @@
+[
+  {
+    "company_name": "Wincanton",
+    "company_domain": NaN,
+    "estimated_revenue_usd": 1800000000.0,
+    "revenue_display": "$1.80B",
+    "tier": "Super Platinum",
+    "tier_description": "Annual revenue from operations > $1Bn",
+    "citation": "https://rocketreach.co/wincanton-profile_b5c6377ff42e0ca3 (Confidence: medium) - The first search result explicitly states Wincanton has $1.8 billion in revenue. While this appears to be in USD already and is the most recent figure found, it comes from a business directory rather than an official financial report, which lowers confidence slightly."
+  },
+  {
+    "company_name": "Black Sheep UK",
+    "company_domain": NaN,
+    "estimated_revenue_usd": null,
+    "revenue_display": "Not Available",
+    "tier": "Unknown",
+    "tier_description": "Revenue information not available",
+    "citation": " (Confidence: low) - The search results explicitly state 'No financial information found for Black Sheep UK.' No official financial reports, SEC filings, investor relations pages, or estimates were available to determine the annual revenue."
+  },
+  {
+    "company_name": "Bahrain Post",
+    "company_domain": NaN,
+    "estimated_revenue_usd": null,
+    "revenue_display": "Not Available",
+    "tier": "Unknown",
+    "tier_description": "Revenue information not available",
+    "citation": " (Confidence: low) - The search result is for 'Bahrain Middle East Bank' which appears to be a different entity than Bahrain Post. The description mentions 'bahrainpost.com' but the financial information provided is for the bank, not the postal service. No reliable revenue data for Bahrain Post was found in these search results."
+  },
+  {
+    "company_name": "MAF",
+    "company_domain": NaN,
+    "estimated_revenue_usd": null,
+    "revenue_display": "Not Available",
+    "tier": "Unknown",
+    "tier_description": "Revenue information not available",
+    "citation": " (Confidence: low) - The search results show multiple companies with 'MAF' in their name across different industries and locations, but none appear to be the primary MAF entity (likely Majid Al Futtaim). The results include an insurance company, auto finance company, trucking company, auditing firm, and aviation company - none matching the expected retail/hospitality conglomerate. No reliable annual revenue data for the actual MAF (Majid Al Futtaim) was found in these results."
+  },
+  {
+    "company_name": "Gulftainer",
+    "company_domain": NaN,
+    "estimated_revenue_usd": 462400000.0,
+    "revenue_display": "$462.40M",
+    "tier": "Diamond",
+    "tier_description": "Annual revenue from operations $100Mn to $500Mn",
+    "citation": "https://rocketreach.co/gulftainer-profile_b5dc5dc1f42e4a6f (Confidence: medium) - The first search result explicitly states Gulftainer has $462.4 million in revenue. While this appears to be a third-party business intelligence source rather than an official financial report, it's the only revenue figure provided across all search results. No year is specified, so this may not be the most recent annual figure, but it's the only available data point."
+  }
+]

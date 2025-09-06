@@ -1,0 +1,254 @@
+2025-09-06 23:27:42,457 - __main__ - INFO - Validating configuration...
+2025-09-06 23:27:42,457 - __main__ - INFO - Configuration validated successfully
+2025-09-06 23:27:43,064 - __main__ - INFO - Creating sample CSV file: sample_contacts.csv
+2025-09-06 23:27:43,066 - src.processors.contact_csv_processor - INFO - Created sample contacts CSV at sample_contacts.csv
+2025-09-06 23:27:43,067 - __main__ - INFO - Sample file created successfully: sample_contacts.csv
+2025-09-06 23:29:29,824 - __main__ - INFO - Validating configuration...
+2025-09-06 23:29:29,824 - __main__ - INFO - Configuration validated successfully
+2025-09-06 23:29:29,984 - __main__ - INFO - Creating sample CSV file: sample_contacts.csv
+2025-09-06 23:29:29,986 - src.processors.contact_csv_processor - INFO - Created sample contacts CSV at sample_contacts.csv
+2025-09-06 23:29:29,987 - __main__ - INFO - Sample file created successfully: sample_contacts.csv
+2025-09-06 23:29:54,787 - __main__ - INFO - Validating configuration...
+2025-09-06 23:29:54,788 - __main__ - INFO - Configuration validated successfully
+2025-09-06 23:29:54,925 - __main__ - INFO - Starting contact enrichment process...
+2025-09-06 23:29:54,925 - __main__ - INFO - Input file: sample_contacts.csv
+2025-09-06 23:29:54,925 - __main__ - INFO - Output file: enriched_sample_contacts.csv
+2025-09-06 23:29:54,926 - src.processors.contact_csv_processor - INFO - Read 5 contacts from sample_contacts.csv
+2025-09-06 23:29:54,929 - src.processors.contact_csv_processor - INFO - Processed 5 valid contacts
+2025-09-06 23:29:54,929 - src.processors.contact_csv_processor - INFO - Starting enrichment for 5 contacts
+2025-09-06 23:29:54,929 - src.agents.contact_agent - INFO - Processing contact 1/5: John Smith
+2025-09-06 23:29:54,929 - src.agents.contact_agent - INFO - Starting enrichment for: John Smith at Microsoft
+2025-09-06 23:29:54,929 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com/in/ "John Smith" "Microsoft"
+2025-09-06 23:29:54,929 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com/in/ "John Smith" "Microsoft"...
+2025-09-06 23:29:56,043 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:29:57,047 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:29:57,051 - src.agents.contact_agent - INFO - Found 10 LinkedIn search results
+2025-09-06 23:29:57,051 - src.agents.contact_agent - INFO - Searching additional info for: "John Smith" "Microsoft" profile bio about
+2025-09-06 23:29:57,051 - src.tools.web_search - INFO - Performing search for query: "John Smith" "Microsoft" profile bio about...
+2025-09-06 23:29:58,144 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:29:59,149 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:29:59,153 - src.agents.contact_agent - INFO - Found 10 additional search results
+2025-09-06 23:29:59,154 - src.agents.contact_agent - INFO - Calling LLM for contact: John Smith at Microsoft
+2025-09-06 23:29:59,182 - src.agents.contact_agent - ERROR - Error extracting contact info for John Smith: Completions.create() got an unexpected keyword argument 'headers'
+2025-09-06 23:29:59,182 - src.tools.web_search - INFO - Performing search for query: "Microsoft" official website...
+2025-09-06 23:30:00,447 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:01,448 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:30:01,450 - src.agents.contact_agent - INFO - Found domain for Microsoft: en.wikipedia.org
+2025-09-06 23:30:01,450 - src.agents.contact_agent - INFO - Generated email for John Smith: john.smith@en.wikipedia.org
+2025-09-06 23:30:01,450 - src.agents.contact_agent - INFO - Enrichment completed for: John Smith
+2025-09-06 23:30:03,454 - src.agents.contact_agent - INFO - Processing contact 2/5: Sarah Johnson
+2025-09-06 23:30:03,455 - src.agents.contact_agent - INFO - Starting enrichment for: Sarah Johnson at Google
+2025-09-06 23:30:03,455 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com/in/ "Sarah Johnson" "Google"
+2025-09-06 23:30:03,456 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com/in/ "Sarah Johnson" "Google"...
+2025-09-06 23:30:04,530 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:05,535 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:30:05,537 - src.agents.contact_agent - INFO - Found 10 LinkedIn search results
+2025-09-06 23:30:05,537 - src.agents.contact_agent - INFO - Searching additional info for: "Sarah Johnson" "Google" profile bio about
+2025-09-06 23:30:05,537 - src.tools.web_search - INFO - Performing search for query: "Sarah Johnson" "Google" profile bio about...
+2025-09-06 23:30:06,812 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:07,818 - src.tools.web_search - INFO - Search completed successfully, found 6 results
+2025-09-06 23:30:07,822 - src.agents.contact_agent - INFO - Found 6 additional search results
+2025-09-06 23:30:07,822 - src.agents.contact_agent - INFO - Calling LLM for contact: Sarah Johnson at Google
+2025-09-06 23:30:07,823 - src.agents.contact_agent - ERROR - Error extracting contact info for Sarah Johnson: Completions.create() got an unexpected keyword argument 'headers'
+2025-09-06 23:30:07,823 - src.tools.web_search - INFO - Performing search for query: "Google" official website...
+2025-09-06 23:30:09,113 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:10,114 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:30:10,117 - src.agents.contact_agent - INFO - Found domain for Google: about.google
+2025-09-06 23:30:10,117 - src.agents.contact_agent - INFO - Generated email for Sarah Johnson: sarah.johnson@about.google
+2025-09-06 23:30:10,117 - src.agents.contact_agent - INFO - Enrichment completed for: Sarah Johnson
+2025-09-06 23:30:12,122 - src.agents.contact_agent - INFO - Processing contact 3/5: Michael Brown
+2025-09-06 23:30:12,123 - src.agents.contact_agent - INFO - Starting enrichment for: Michael Brown at Apple
+2025-09-06 23:30:12,123 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com/in/ "Michael Brown" "Apple"
+2025-09-06 23:30:12,123 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com/in/ "Michael Brown" "Apple"...
+2025-09-06 23:30:13,186 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:14,188 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:30:14,191 - src.agents.contact_agent - INFO - Found 10 LinkedIn search results
+2025-09-06 23:30:14,192 - src.agents.contact_agent - INFO - Searching additional info for: "Michael Brown" "Apple" profile bio about
+2025-09-06 23:30:14,192 - src.tools.web_search - INFO - Performing search for query: "Michael Brown" "Apple" profile bio about...
+2025-09-06 23:30:15,282 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:16,287 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:30:16,291 - src.agents.contact_agent - INFO - Found 10 additional search results
+2025-09-06 23:30:16,291 - src.agents.contact_agent - INFO - Calling LLM for contact: Michael Brown at Apple
+2025-09-06 23:30:16,292 - src.agents.contact_agent - ERROR - Error extracting contact info for Michael Brown: Completions.create() got an unexpected keyword argument 'headers'
+2025-09-06 23:30:16,292 - src.tools.web_search - INFO - Performing search for query: "Apple" official website...
+2025-09-06 23:30:17,564 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:18,570 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:30:18,573 - src.agents.contact_agent - INFO - Found domain for Apple: apple.com
+2025-09-06 23:30:18,573 - src.agents.contact_agent - INFO - Generated email for Michael Brown: michael.brown@apple.com
+2025-09-06 23:30:18,573 - src.agents.contact_agent - INFO - Enrichment completed for: Michael Brown
+2025-09-06 23:30:20,576 - src.agents.contact_agent - INFO - Processing contact 4/5: Emily Davis
+2025-09-06 23:30:20,576 - src.agents.contact_agent - INFO - Starting enrichment for: Emily Davis at Amazon
+2025-09-06 23:30:20,576 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com/in/ "Emily Davis" "Amazon"
+2025-09-06 23:30:20,577 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com/in/ "Emily Davis" "Amazon"...
+2025-09-06 23:30:21,622 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:22,628 - src.tools.web_search - INFO - Search completed successfully, found 6 results
+2025-09-06 23:30:22,632 - src.agents.contact_agent - INFO - Found 6 LinkedIn search results
+2025-09-06 23:30:22,632 - src.agents.contact_agent - INFO - Searching additional info for: "Emily Davis" "Amazon" profile bio about
+2025-09-06 23:30:22,632 - src.tools.web_search - INFO - Performing search for query: "Emily Davis" "Amazon" profile bio about...
+2025-09-06 23:30:23,686 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:24,687 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:30:24,690 - src.agents.contact_agent - INFO - Found 10 additional search results
+2025-09-06 23:30:24,690 - src.agents.contact_agent - INFO - Calling LLM for contact: Emily Davis at Amazon
+2025-09-06 23:30:24,690 - src.agents.contact_agent - ERROR - Error extracting contact info for Emily Davis: Completions.create() got an unexpected keyword argument 'headers'
+2025-09-06 23:30:24,691 - src.tools.web_search - INFO - Performing search for query: "Amazon" official website...
+2025-09-06 23:30:25,983 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:26,985 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:30:26,987 - src.agents.contact_agent - INFO - Found domain for Amazon: amazon.com
+2025-09-06 23:30:26,987 - src.agents.contact_agent - INFO - Generated email for Emily Davis: emily.davis@amazon.com
+2025-09-06 23:30:26,987 - src.agents.contact_agent - INFO - Enrichment completed for: Emily Davis
+2025-09-06 23:30:28,992 - src.agents.contact_agent - INFO - Processing contact 5/5: David Wilson
+2025-09-06 23:30:28,993 - src.agents.contact_agent - INFO - Starting enrichment for: David Wilson at Meta
+2025-09-06 23:30:28,993 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com/in/ "David Wilson" "Meta"
+2025-09-06 23:30:28,993 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com/in/ "David Wilson" "Meta"...
+2025-09-06 23:30:30,065 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:31,067 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:30:31,069 - src.agents.contact_agent - INFO - Found 5 LinkedIn search results
+2025-09-06 23:30:31,069 - src.agents.contact_agent - INFO - Searching additional info for: "David Wilson" "Meta" profile bio about
+2025-09-06 23:30:31,069 - src.tools.web_search - INFO - Performing search for query: "David Wilson" "Meta" profile bio about...
+2025-09-06 23:30:32,234 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:33,236 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:30:33,238 - src.agents.contact_agent - INFO - Found 10 additional search results
+2025-09-06 23:30:33,239 - src.agents.contact_agent - INFO - Calling LLM for contact: David Wilson at Meta
+2025-09-06 23:30:33,239 - src.agents.contact_agent - ERROR - Error extracting contact info for David Wilson: Completions.create() got an unexpected keyword argument 'headers'
+2025-09-06 23:30:33,239 - src.tools.web_search - INFO - Performing search for query: "Meta" official website...
+2025-09-06 23:30:34,571 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:30:35,577 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:30:35,579 - src.agents.contact_agent - INFO - Found domain for Meta: meta.com
+2025-09-06 23:30:35,579 - src.agents.contact_agent - INFO - Generated email for David Wilson: david.wilson@meta.com
+2025-09-06 23:30:35,579 - src.agents.contact_agent - INFO - Enrichment completed for: David Wilson
+2025-09-06 23:30:37,591 - src.processors.contact_csv_processor - INFO - Saved 5 enriched contacts to enriched_sample_contacts.csv
+2025-09-06 23:30:37,591 - src.processors.contact_csv_processor - INFO - Saved 5 enriched contacts to enriched_sample_contacts.json
+2025-09-06 23:30:37,592 - src.processors.contact_csv_processor - INFO - Enrichment completed. Results saved to enriched_sample_contacts.csv
+2025-09-06 23:30:37,592 - __main__ - INFO - Contact enrichment process completed successfully
+2025-09-06 23:33:16,704 - __main__ - INFO - Validating configuration...
+2025-09-06 23:33:16,705 - __main__ - INFO - Configuration validated successfully
+2025-09-06 23:33:16,864 - __main__ - INFO - Starting contact enrichment process...
+2025-09-06 23:33:16,865 - __main__ - INFO - Input file: sample_contacts.csv
+2025-09-06 23:33:16,865 - __main__ - INFO - Output file: enriched_sample_contacts.csv
+2025-09-06 23:33:16,867 - src.processors.contact_csv_processor - INFO - Read 5 contacts from sample_contacts.csv
+2025-09-06 23:33:16,868 - src.processors.contact_csv_processor - INFO - Processed 5 valid contacts
+2025-09-06 23:33:16,868 - src.processors.contact_csv_processor - INFO - Starting enrichment for 5 contacts
+2025-09-06 23:33:16,868 - src.agents.contact_agent - INFO - Processing contact 1/5: John Smith
+2025-09-06 23:33:16,868 - src.agents.contact_agent - INFO - Starting enrichment for: John Smith at Microsoft
+2025-09-06 23:33:16,868 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com "John Smith" "Microsoft"
+2025-09-06 23:33:16,868 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com "John Smith" "Microsoft"...
+2025-09-06 23:33:17,876 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:33:18,882 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:33:18,884 - src.agents.contact_agent - INFO - Found 10 LinkedIn search results
+2025-09-06 23:33:18,884 - src.agents.contact_agent - INFO - Searching additional info for: "John Smith" "Microsoft" profile bio about
+2025-09-06 23:33:18,884 - src.tools.web_search - INFO - Performing search for query: "John Smith" "Microsoft" profile bio about...
+2025-09-06 23:33:19,548 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:33:20,552 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:33:20,553 - src.agents.contact_agent - INFO - Found 10 additional search results
+2025-09-06 23:33:20,553 - src.agents.contact_agent - INFO - Calling LLM for contact: John Smith at Microsoft
+2025-09-06 23:33:26,026 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 23:33:31,401 - src.agents.contact_agent - INFO - LLM response: {
+    "linkedin_url": "https://www.linkedin.com/in/john-smith-82561510/",
+    "current_job_title": "HR Director"
+}
+2025-09-06 23:33:31,402 - src.tools.web_search - INFO - Performing search for query: "Microsoft" official website...
+2025-09-06 23:33:32,087 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:33:33,093 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:33:33,095 - src.agents.contact_agent - INFO - Found domain for Microsoft: en.wikipedia.org
+2025-09-06 23:33:33,095 - src.agents.contact_agent - INFO - Generated email for John Smith: john.smith@en.wikipedia.org
+2025-09-06 23:33:33,095 - src.agents.contact_agent - INFO - Enrichment completed for: John Smith
+2025-09-06 23:33:35,098 - src.agents.contact_agent - INFO - Processing contact 2/5: Sarah Johnson
+2025-09-06 23:33:35,098 - src.agents.contact_agent - INFO - Starting enrichment for: Sarah Johnson at Google
+2025-09-06 23:33:35,098 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com "Sarah Johnson" "Google"
+2025-09-06 23:33:35,098 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com "Sarah Johnson" "Google"...
+2025-09-06 23:33:36,147 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:33:37,148 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:33:37,150 - src.agents.contact_agent - INFO - Found 10 LinkedIn search results
+2025-09-06 23:33:37,150 - src.agents.contact_agent - INFO - Searching additional info for: "Sarah Johnson" "Google" profile bio about
+2025-09-06 23:33:37,150 - src.tools.web_search - INFO - Performing search for query: "Sarah Johnson" "Google" profile bio about...
+2025-09-06 23:33:37,833 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:33:38,838 - src.tools.web_search - INFO - Search completed successfully, found 6 results
+2025-09-06 23:33:38,840 - src.agents.contact_agent - INFO - Found 6 additional search results
+2025-09-06 23:33:38,840 - src.agents.contact_agent - INFO - Calling LLM for contact: Sarah Johnson at Google
+2025-09-06 23:33:41,023 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 23:33:46,130 - src.agents.contact_agent - INFO - LLM response: {
+    "linkedin_url": "https://www.linkedin.com/in/sarah-johnson-039b4b10/",
+    "current_job_title": "Manager"
+}
+2025-09-06 23:33:46,130 - src.tools.web_search - INFO - Performing search for query: "Google" official website...
+2025-09-06 23:33:46,804 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:33:47,807 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:33:47,808 - src.agents.contact_agent - INFO - Found domain for Google: about.google
+2025-09-06 23:33:47,808 - src.agents.contact_agent - INFO - Generated email for Sarah Johnson: sarah.johnson@about.google
+2025-09-06 23:33:47,808 - src.agents.contact_agent - INFO - Enrichment completed for: Sarah Johnson
+2025-09-06 23:33:49,813 - src.agents.contact_agent - INFO - Processing contact 3/5: Michael Brown
+2025-09-06 23:33:49,814 - src.agents.contact_agent - INFO - Starting enrichment for: Michael Brown at Apple
+2025-09-06 23:33:49,814 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com "Michael Brown" "Apple"
+2025-09-06 23:33:49,814 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com "Michael Brown" "Apple"...
+2025-09-06 23:33:50,863 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:33:51,864 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:33:51,866 - src.agents.contact_agent - INFO - Found 10 LinkedIn search results
+2025-09-06 23:33:51,866 - src.agents.contact_agent - INFO - Searching additional info for: "Michael Brown" "Apple" profile bio about
+2025-09-06 23:33:51,866 - src.tools.web_search - INFO - Performing search for query: "Michael Brown" "Apple" profile bio about...
+2025-09-06 23:33:52,595 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:33:53,600 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:33:53,602 - src.agents.contact_agent - INFO - Found 10 additional search results
+2025-09-06 23:33:53,602 - src.agents.contact_agent - INFO - Calling LLM for contact: Michael Brown at Apple
+2025-09-06 23:33:57,403 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 23:33:59,810 - src.agents.contact_agent - INFO - LLM response: {
+    "linkedin_url": "https://www.linkedin.com/in/michaelbrownfib618/",
+    "current_job_title": "Americas Geo Development Lead"
+}
+2025-09-06 23:33:59,810 - src.tools.web_search - INFO - Performing search for query: "Apple" official website...
+2025-09-06 23:34:00,500 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:34:01,505 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:34:01,508 - src.agents.contact_agent - INFO - Found domain for Apple: apple.com
+2025-09-06 23:34:01,508 - src.agents.contact_agent - INFO - Generated email for Michael Brown: michael.brown@apple.com
+2025-09-06 23:34:01,509 - src.agents.contact_agent - INFO - Enrichment completed for: Michael Brown
+2025-09-06 23:34:03,514 - src.agents.contact_agent - INFO - Processing contact 4/5: Emily Davis
+2025-09-06 23:34:03,514 - src.agents.contact_agent - INFO - Starting enrichment for: Emily Davis at Amazon
+2025-09-06 23:34:03,514 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com "Emily Davis" "Amazon"
+2025-09-06 23:34:03,514 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com "Emily Davis" "Amazon"...
+2025-09-06 23:34:04,548 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:34:05,554 - src.tools.web_search - INFO - Search completed successfully, found 6 results
+2025-09-06 23:34:05,555 - src.agents.contact_agent - INFO - Found 6 LinkedIn search results
+2025-09-06 23:34:05,555 - src.agents.contact_agent - INFO - Searching additional info for: "Emily Davis" "Amazon" profile bio about
+2025-09-06 23:34:05,555 - src.tools.web_search - INFO - Performing search for query: "Emily Davis" "Amazon" profile bio about...
+2025-09-06 23:34:06,224 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:34:07,228 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:34:07,230 - src.agents.contact_agent - INFO - Found 10 additional search results
+2025-09-06 23:34:07,231 - src.agents.contact_agent - INFO - Calling LLM for contact: Emily Davis at Amazon
+2025-09-06 23:34:10,836 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 23:34:11,576 - src.agents.contact_agent - INFO - LLM response: {
+    "linkedin_url": "NOT_FOUND",
+    "current_job_title": "NOT_FOUND"
+}
+2025-09-06 23:34:11,576 - src.tools.web_search - INFO - Performing search for query: "Amazon" official website...
+2025-09-06 23:34:12,267 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:34:13,270 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:34:13,275 - src.agents.contact_agent - INFO - Found domain for Amazon: amazon.com
+2025-09-06 23:34:13,275 - src.agents.contact_agent - INFO - Generated email for Emily Davis: emily.davis@amazon.com
+2025-09-06 23:34:13,275 - src.agents.contact_agent - INFO - Enrichment completed for: Emily Davis
+2025-09-06 23:34:15,281 - src.agents.contact_agent - INFO - Processing contact 5/5: David Wilson
+2025-09-06 23:34:15,281 - src.agents.contact_agent - INFO - Starting enrichment for: David Wilson at Meta
+2025-09-06 23:34:15,281 - src.agents.contact_agent - INFO - Searching LinkedIn for: site:linkedin.com "David Wilson" "Meta"
+2025-09-06 23:34:15,281 - src.tools.web_search - INFO - Performing search for query: site:linkedin.com "David Wilson" "Meta"...
+2025-09-06 23:34:16,294 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:34:17,296 - src.tools.web_search - INFO - Search completed successfully, found 4 results
+2025-09-06 23:34:17,299 - src.agents.contact_agent - INFO - Found 4 LinkedIn search results
+2025-09-06 23:34:17,300 - src.agents.contact_agent - INFO - Searching additional info for: "David Wilson" "Meta" profile bio about
+2025-09-06 23:34:17,300 - src.tools.web_search - INFO - Performing search for query: "David Wilson" "Meta" profile bio about...
+2025-09-06 23:34:18,007 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:34:19,009 - src.tools.web_search - INFO - Search completed successfully, found 10 results
+2025-09-06 23:34:19,012 - src.agents.contact_agent - INFO - Found 10 additional search results
+2025-09-06 23:34:19,012 - src.agents.contact_agent - INFO - Calling LLM for contact: David Wilson at Meta
+2025-09-06 23:34:25,031 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 23:34:27,987 - src.agents.contact_agent - INFO - LLM response: {
+    "linkedin_url": "https://uk.linkedin.com/in/david-wilson-5498039",
+    "current_job_title": "Business Marketing Director, EMEA"
+}
+2025-09-06 23:34:27,988 - src.tools.web_search - INFO - Performing search for query: "Meta" official website...
+2025-09-06 23:34:28,704 - src.tools.web_search - INFO - Search response status: 200
+2025-09-06 23:34:29,710 - src.tools.web_search - INFO - Search completed successfully, found 5 results
+2025-09-06 23:34:29,715 - src.agents.contact_agent - INFO - Found domain for Meta: meta.com
+2025-09-06 23:34:29,715 - src.agents.contact_agent - INFO - Generated email for David Wilson: david.wilson@meta.com
+2025-09-06 23:34:29,715 - src.agents.contact_agent - INFO - Enrichment completed for: David Wilson
+2025-09-06 23:34:31,729 - src.processors.contact_csv_processor - INFO - Saved 5 enriched contacts to enriched_sample_contacts.csv
+2025-09-06 23:34:31,730 - src.processors.contact_csv_processor - INFO - Saved 5 enriched contacts to enriched_sample_contacts.json
+2025-09-06 23:34:31,730 - src.processors.contact_csv_processor - INFO - Enrichment completed. Results saved to enriched_sample_contacts.csv
+2025-09-06 23:34:31,730 - __main__ - INFO - Contact enrichment process completed successfully
