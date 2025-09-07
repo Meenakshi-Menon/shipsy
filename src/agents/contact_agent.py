@@ -7,6 +7,9 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 from src.config.settings import Config
 from src.tools.web_search import BraveWebSearch
+import re
+from urllib.parse import urlparse
+
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -230,7 +233,7 @@ Please find the LinkedIn profile URL and current job title for this person."""
             
         Returns:
             Generated email address
-        """
+ 
         if not contact_name or not company_domain:
             return "NOT_FOUND"
         
@@ -257,6 +260,36 @@ Please find the LinkedIn profile URL and current job title for this person."""
         email = re.sub(r'[^a-zA-Z0-9.@]', '', email)
         
         logger.info(f"Generated email for {contact_name}: {email}")
+        return email
+        """
+        if not contact_name or not company_domain:
+            return "NOT_FOUND"
+
+    # Clean the domain
+        if company_domain.startswith("http"):
+            parsed = urlparse(company_domain)
+            domain = parsed.netloc
+        else:
+            domain = company_domain
+        if domain.startswith("www."):
+            domain = domain[4:]
+        domain = domain.lower().strip()
+        if not domain:
+            return "NOT_FOUND"
+
+     # Parse the name
+        name_parts = contact_name.lower().strip().split()
+        if len(name_parts) >= 2:
+            first_name = name_parts[0]
+            last_name = name_parts[-1]
+            email = f"{first_name}.{last_name}@{domain}"
+        elif len(name_parts) == 1:
+            email = f"{name_parts[0]}@{domain}"
+        else:
+            return "NOT_FOUND"
+
+        # Clean up the email safely
+        email = re.sub(r'[^a-z0-9.@\-]', '', email)
         return email
 
     def extract_company_domain(self, company_name: str) -> Optional[str]:

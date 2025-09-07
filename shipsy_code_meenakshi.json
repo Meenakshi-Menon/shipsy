@@ -1,0 +1,6 @@
+{
+    "project_name": "Shipsy Code",
+    "author": "Meenakshi Menon",
+    "github_link": "https://github.com/Meenakshi-Menon/shipsy.git",
+    "description": "Automation pipeline project for enriching company and contact information using AI agents. The repository contains code for revenue analysis, contact enrichment, and Excel/JSON output generation."
+}

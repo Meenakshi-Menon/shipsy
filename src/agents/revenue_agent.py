@@ -434,7 +434,8 @@ def create_revenue_agent_tools():
     
     @tool
     def extract_revenue_from_sources(company_name: str, search_results: str) -> str:
-        """
+        """  
+    
         Extract revenue information from search results using DeepSeek.
         
         Args:

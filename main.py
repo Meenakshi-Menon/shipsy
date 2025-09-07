@@ -71,12 +71,12 @@ def run_excel_automation():
     processor = ExcelCompanyProcessor("Shipsy Assignment.xlsx")
 
     # Part A: Companies
-    #print("\n📊 Processing Companies...")
-    #processor.process_companies(
-        #input_sheet="Company",
-        #output_sheet="Company Results"
-   # )
-    #print("✅ Companies processed and written to 'Company Results' sheet.")
+    print("\n📊 Processing Companies...")
+    processor.process_companies(
+        input_sheet="Company",
+        output_sheet="Company Results"
+    )
+    print("✅ Companies processed and written to 'Company Results' sheet.")
 
 
     # Part B: Contacts
