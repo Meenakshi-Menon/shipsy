@@ -1,0 +1,7 @@
+langchain
+langchain-openai
+langgraph
+pandas
+openpyxl
+requests
+python-dotenv

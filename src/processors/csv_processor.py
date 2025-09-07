@@ -1,3 +1,4 @@
+'''
 import pandas as pd
 import csv
 import json
@@ -247,3 +248,56 @@ if __name__ == "__main__":
     print("Created sample CSV file for testing")
     print("To process your own CSV file, use:")
     print("processor.process_csv_file('your_file.csv')")
+'''
+
+import pandas as pd
+from src.agents.revenue_agent import DeepSeekRevenueAgent
+from src.tools.tier_assignment import assign_company_tier
+
+class ExcelCompanyProcessor:
+    def __init__(self, filepath):
+        self.filepath = filepath
+        self.agent = DeepSeekRevenueAgent()
+
+    def process_companies(self, input_sheet="Companies", output_sheet="Company Results"):
+        # read company data from the Companies sheet
+        df = pd.read_excel(self.filepath, sheet_name=input_sheet)
+
+        results = []
+        for _, row in df.iterrows():
+            company_name = str(row.get("Company Name", "")).strip()
+            company_domain = str(row.get("Company Domain", "")).strip()
+
+            if not company_name:
+                continue
+
+            try:
+                # get revenue from agent
+                result = self.agent.analyze_company_revenue(company_name, company_domain)
+                revenue = result.get("estimated_revenue_usd", 0.0)
+                tier = assign_company_tier(revenue)
+
+                results.append({
+                    "Company Name": company_name,
+                    "Company Domain": company_domain,
+                    "Estimated Revenue (USD)": revenue,
+                    "Tier": tier,
+                    "Citation": result.get("citation", ""),
+                })
+            except Exception as e:
+                results.append({
+                    "Company Name": company_name,
+                    "Company Domain": company_domain,
+                    "Estimated Revenue (USD)": None,
+                    "Tier": "Error",
+                    "Citation": str(e),
+                })
+
+        results_df = pd.DataFrame(results)
+
+        # write results into a new sheet
+        with pd.ExcelWriter(self.filepath, engine="openpyxl", mode="a", if_sheet_exists="replace") as writer:
+            results_df.to_excel(writer, sheet_name=output_sheet, index=False)
+
+        print(f"[INFO] Company results written to sheet: {output_sheet}")
+

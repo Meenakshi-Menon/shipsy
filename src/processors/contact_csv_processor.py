@@ -1,3 +1,4 @@
+'''
 import pandas as pd
 import logging
 from typing import List, Dict, Optional
@@ -193,3 +194,55 @@ if __name__ == "__main__":
     
     print(f"Created sample CSV file: {sample_file}")
     print("You can now run the enrichment process on this file.")
+'''
+
+import pandas as pd
+from src.agents.contact_agent import ContactEnrichmentAgent
+
+class ExcelContactProcessor:
+    def __init__(self, filepath):
+        self.filepath = filepath
+        self.agent = ContactEnrichmentAgent()
+
+    def process_contacts(self, input_sheet="Contacts", output_sheet="Contact Results"):
+        # read contacts data from the Contacts sheet
+        df = pd.read_excel(self.filepath, sheet_name=input_sheet)
+
+        results = []
+        for _, row in df.iterrows():
+            contact_name = str(row.get("Contact Name", "")).strip()
+            company_name = str(row.get("Company Name", "")).strip()
+            company_domain = str(row.get("Company Domain", "")).strip()
+
+            if not contact_name or not company_name:
+                continue
+
+            try:
+                enriched = self.agent.enrich_contact(contact_name, company_name)
+
+                results.append({
+                    "Contact Name": enriched.contact_name,
+                    "Company Name": enriched.company_name,
+                    "LinkedIn URL": enriched.linkedin_url,
+                    "Current Job Title": enriched.current_job_title,
+                    "Work Email": enriched.work_email,
+                    "Citation": enriched.citation_source,
+                })
+            except Exception as e:
+                results.append({
+                    "Contact Name": contact_name,
+                    "Company Name": company_name,
+                    "LinkedIn URL": "Error",
+                    "Current Job Title": "Error",
+                    "Work Email": "Error",
+                    "Citation": str(e),
+                })
+
+        results_df = pd.DataFrame(results)
+
+        # write results into a new sheet
+        with pd.ExcelWriter(self.filepath, engine="openpyxl", mode="a", if_sheet_exists="replace") as writer:
+            results_df.to_excel(writer, sheet_name=output_sheet, index=False)
+
+        print(f"[INFO] Contact results written to sheet: {output_sheet}")
+

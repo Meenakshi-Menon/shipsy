@@ -401,6 +401,22 @@ Please find the LinkedIn profile URL and current job title for this person."""
                 enriched_contacts.append(failed_contact)
         
         return enriched_contacts
+    
+def run_contact_agent(contact_name: str, company_name: str, company_domain: str = ""):
+    """
+    Wrapper function to be used in excel_company_processor.
+    Uses ContactEnrichmentAgent to enrich contact details.
+    """
+    agent = ContactEnrichmentAgent()
+    result = agent.enrich_contact(contact_name, company_name)
+    
+    return (
+        result.linkedin_url,
+        result.current_job_title,
+        result.work_email,
+        result.citation_source
+    )
+
 
 
 if __name__ == "__main__":
